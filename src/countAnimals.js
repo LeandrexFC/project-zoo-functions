@@ -4,8 +4,8 @@ const { species } = data;
 
 function countAnimals(animal) {
   if (animal === undefined) {
-    return residents.map((elements) => elements.name === animal);
+    return species.filter((element) => element.popularity);
   }
 }
-console.log(countAnimals({ specie: 'penguins' }));
+console.log(countAnimals());
 module.exports = countAnimals;
