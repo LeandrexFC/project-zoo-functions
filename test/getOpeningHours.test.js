@@ -33,4 +33,10 @@ describe('Testes da função getOpeningHours', () => {
   test('Deve retornar Error Message se receber horário diferente do padrão', () => {
     expect(() => getOpeningHours('Sunday', '09:c0-AM')).toThrowError(new Error('The minutes should represent a number'));
   });
+  test('Deve retornar Error Message se receber horário diferente do padrão', () => {
+    expect(() => getOpeningHours('Monday', '10:60-AM')).toThrowError(new Error('The minutes must be between 0 and 59'));
+  });
+  test('Deve retornar Error Message se receber horário > 0 a 12', () => {
+    expect(() => getOpeningHours('Monday', '13:00-AM')).toThrowError(new Error('The hour must be between 0 and 12'));
+  });
 });
