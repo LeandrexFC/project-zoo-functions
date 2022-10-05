@@ -10,7 +10,7 @@ const entrants2 = [
 ];
 
 function countEntrants(entrants) {
-
+  
 }
 
 function calculateEntry(entrants) {
