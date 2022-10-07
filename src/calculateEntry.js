@@ -23,6 +23,7 @@ function calculateEntry(entrants) {
   if (entrants === undefined || entrants === {}) {
     return 0;
   }
+
   const { child, adult, senior } = countEntrants(entrants);
   const prices = {
     adult: 49.99,
