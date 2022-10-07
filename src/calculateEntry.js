@@ -30,7 +30,6 @@ function calculateEntry(entrants) {
     senior: 24.99,
     child: 20.99,
   };
-
   const sum = child.valueOf() * prices.child;
   const sum2 = adult.valueOf() * prices.adult;
   const sum3 = senior.valueOf() * prices.senior;
