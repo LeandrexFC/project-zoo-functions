@@ -1,11 +1,5 @@
 const data = require('../data/zoo_data');
 
-const entrants2 = [
-  { name: 'Lara Carvalho', age: 5 },
-  { name: 'Carlos Nogueira', age: 50 },
-  { name: 'Carlos Nogueiraa', age: 50 },
-];
-
 function countEntrants(entrants) {
   const obj = {
     child: 0,
@@ -43,5 +37,4 @@ function calculateEntry(entrants) {
   return sum + sum2 + sum3;
 }
 
-console.log(calculateEntry(entrants2));
 module.exports = { calculateEntry, countEntrants };
