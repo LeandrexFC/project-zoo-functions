@@ -6,35 +6,32 @@ function countEntrants(entrants) {
     adult: 0,
     senior: 0,
   };
-  entrants.forEach((elements) => {
-    if (elements.age < 18) {
+  entrants.forEach((element) => {
+    if (element.age < 18) {
       obj.child += 1;
-    }
-    if (elements.age >= 18 && elements.age < 50) {
+    } else if (element.age >= 18 && element.age < 50) {
       obj.adult += 1;
     } else {
-      obj.senior = 1;
+      obj.senior += 1;
     }
   });
   return obj;
 }
 
 function calculateEntry(entrants) {
-  if (entrants === undefined || entrants === {}) {
+  if (!entrants || Object.values(entrants).length === 0) {
     return 0;
   }
-
-  const { child, adult, senior } = countEntrants(entrants);
-  const prices = {
-    adult: 49.99,
-    senior: 24.99,
-    child: 20.99,
-  };
-  const sum = child.valueOf() * prices.child;
-  const sum2 = adult.valueOf() * prices.adult;
-  const sum3 = senior.valueOf() * prices.senior;
-
-  return sum + sum2 + sum3;
+  let result;
+  const { prices } = data;
+  const arrayPrices = [prices];
+  const clients = countEntrants(entrants);
+  arrayPrices.forEach((element) => {
+    result = element.adult * clients.adult
+    + element.senior * clients.senior
+    + element.child * clients.child;
+  });
+  return result;
 }
 
 module.exports = { calculateEntry, countEntrants };
